@@ -14,16 +14,20 @@ And wait
 
 And wait
 
-Because we first need a state file before we can deploy...
+This whole process takes nearly 20 minutes to complete.
 
-After the first terraform apply is done, please rename the deploy.tf.bkp to deploy.tf
-
-Then run terraform apply again. 
-
-In a normal environment where the state file is not ever absent, we wouldn't have to perform this messy step. Sorry and hope this does not cause me to lose points. 
 
 The LB url will display in the output at the bottom
 
+Note1: DNS often takes a few minutes to resolve
+
+Note2: This terraform script creates a "unqork-takehome-cluster-xxx" IAM role
+- This role has the following AWS IAM policies attached to it
+  - AmazonEKSClusterPolicy
+  - AmazonEKSVPCResourceController
+  - (Custom) unqork-takehome-cluster
+    - Grants the cluster the ability to create log groups for itself
+  
 Enjoy!
 
 (If terraform timeouts after a while, please rerun and it will continue where it left off.)
