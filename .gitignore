@@ -1,0 +1,6 @@
+# ignore ALL .log files
+*.log
+
+# ignore tfstate
+terraform/terraform.*
+terraform/.terraform*
