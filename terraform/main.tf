@@ -14,10 +14,8 @@ module "eks" {
   source = "./modules/eks"
 }
 
-module "deployments" {
-  cluster_id_depends_on = module.eks.cluster_id
-
-  source = "./modules/deployments"
+output "region" {
+  value = module.vpc.region
 }
 
 output "cluster_id" {
@@ -28,10 +26,12 @@ output "cluster_name" {
   value = module.eks.cluster_id
 }
 
-output "app_endpoint" {
-  value = "http://${module.deployments.lb_ip}"
+module "deployments" {
+  cluster_id_depends_on = module.eks.cluster_id
+  eks_cluster_present   = module.eks.cluster_id
+  source                = "./modules/deployments"
 }
 
-output "region" {
-  value = module.vpc.region
+output "app_endpoint" {
+  value = "http://${module.deployments.lb_ip}"
 }
