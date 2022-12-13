@@ -1,7 +1,9 @@
 terraform {
+
   backend "remote" {}
-  
+
   required_providers {
+
     aws = {
       source  = "hashicorp/aws"
       version = ">= 3.20.0"
@@ -16,3 +18,12 @@ terraform {
   required_version = ">= 0.14"
 }
 
+/*
+Run the following to start...
+
+terraform init \
+-backend-config="bucket=bucketname" \
+-backend-config="key=/path/to/key" \
+-backend-config="region=us-east-1"
+
+*/
