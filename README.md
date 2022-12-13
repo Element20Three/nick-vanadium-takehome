@@ -21,7 +21,7 @@ The LB url will display in the output at the bottom
 
 Note1: DNS often takes a few minutes to resolve
 
-Note2: This terraform script creates a "unqork-takehome-cluster-xxx" IAM role
+Note2: This terraform script creates a "takehome-cluster-xxx" IAM role
 - This role has the following AWS IAM policies attached to it
   - AmazonEKSClusterPolicy
   - AmazonEKSVPCResourceController
