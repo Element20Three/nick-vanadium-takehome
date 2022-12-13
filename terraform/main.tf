@@ -1,6 +1,6 @@
 
 module "vpc" {
-  cluster_name = "unqork-takehome"
+  cluster_name = "takehome"
 
   source = "./modules/vpc"
 }
@@ -8,7 +8,7 @@ module "vpc" {
 module "eks" {
   vpc_id          = module.vpc.vpc_id
   private_subnets = module.vpc.private_subnets
-  cluster_name    = "unqork-takehome"
+  cluster_name    = "takehome"
   instance_types  = ["t3a.micro"]
 
   source = "./modules/eks"
