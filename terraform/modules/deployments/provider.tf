@@ -1,5 +1,5 @@
 data "terraform_remote_state" "eks" {
-  backend = var.cluster_id_depends_on == "unqork-takehome" ? "local" : ""
+  backend = var.cluster_id_depends_on == "takehome" ? "local" : ""
 
   config = {
 
