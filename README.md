@@ -1,4 +1,4 @@
-# nick-vanadium-unqork-takehome
+# nick-vanadium-takehome
 
 ## Please run these commands from within this directory
 
